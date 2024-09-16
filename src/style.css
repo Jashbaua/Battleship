@@ -1,0 +1,48 @@
+/* Reset */
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	/* font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem); */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ol[role="list"],
+ul[role="list"] {
+	list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	overflow-wrap: break-word;
+	/* hyphens: auto; */
+	/* width: clamp(45ch, 50%, 75ch); */
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	max-width: 100%;
+	display: block;
+}

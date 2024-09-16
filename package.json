@@ -1,0 +1,22 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "jest",
+    "installwebpack": "npm install --save-dev webpack webpack-cli html-webpack-plugin style-loader css-loader html-loader webpack-dev-server webpack-merge",
+    "installeslint": "npm install --save-dev @eslint/js eslint globals",
+    "installprettier": "npm install --save-dev --save-exact prettier && node --eval \"fs.writeFileSync('.prettierrc','{}\\n')\" && node --eval \"fs.writeFileSync('.prettierignore','# Ignore artifacts:\\nbuild\\ncoverage\\n')\"",
+    "eslintconfigprettier": "npm install --save-dev eslint-config-prettier",
+    "installjest": "npm install --save-dev jest babel-jest @babel/core @babel/preset-env && npm run jest --watch *.js",
+    "fullsetup": "npm run installwebpack && npm run installeslint && npm run installprettier && npm run eslintconfigprettier && installjest",
+    "prebuild":"prettier --write 'src/**/*.{js,css}' && eslint 'src/**/*.js'",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack serve --config webpack.dev.js",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
