@@ -1,8 +1,10 @@
 /* Reset */
-body {
+html,body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
-	/* font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem); */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.4rem;
+	height: 100%;
 }
 
 *,
@@ -34,8 +36,6 @@ textarea,
 select {
 	font: inherit;
 	overflow-wrap: break-word;
-	/* hyphens: auto; */
-	/* width: clamp(45ch, 50%, 75ch); */
 }
 
 img,
@@ -45,4 +45,59 @@ canvas,
 svg {
 	max-width: 100%;
 	display: block;
+}
+
+header{
+	font-weight: bolder;
+	font-size: 3rem;
+	position: absolute;
+	left: 10px;
+}
+
+main{
+	height: 100%;
+	display: grid;
+	grid-template: 100px 1fr 100px/1fr 1fr;
+	place-items: center;
+}
+
+#instruction{
+	grid-column: 1/-1;
+}
+
+.container{
+	text-align: center;
+}
+.board{
+	border: solid 1px rgb(123, 197, 242);
+	display: grid;
+	grid-template: repeat(10,1fr)/repeat(10,1fr);
+}
+.cell{
+	width: 50px;
+	aspect-ratio: 1/1;
+	background-color: rgb(157, 218, 255);
+	border: solid 1px rgb(123, 197, 242);
+}
+.cell.ship{
+	background-color: rgb(200, 99, 99);
+	border: none;
+}
+.cell.shot{
+	background-color: rgb(118, 93, 93);
+}
+.cell.missed{
+	filter: brightness(70%);
+}
+
+#controls{
+	grid-column: 1/-1;
+}
+#controls>button{
+	border: none;
+	border-radius: 10px;
+	background-color: rgb(200, 99, 99);
+	width: 8rem;
+	font-weight: bold;
+	color: white;
 }
