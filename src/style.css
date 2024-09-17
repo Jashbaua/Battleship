@@ -85,9 +85,16 @@ main{
 }
 .cell.shot{
 	background-color: rgb(118, 93, 93);
+	border: none;
 }
 .cell.missed{
-	filter: brightness(70%);
+	background-color: rgb(104, 197, 255);
+}
+.cell.enemy:hover{
+	filter: brightness(90%);
+}
+.cell.enemy:active{
+	filter: brightness(110%);
 }
 
 #controls{
