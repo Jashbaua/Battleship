@@ -36,3 +36,14 @@ test("Receive attack", () => {
     result[1][3] = 1
     expect(gameboard.getBoard()).toStrictEqual(result)
 });
+
+test("Are all sunk?", () => {
+    let gameboard = new Gameboard()
+    gameboard.placeShip(1, 1, 4)
+    gameboard.receiveAttack(1,1)
+    gameboard.receiveAttack(2,1)
+    gameboard.receiveAttack(3,1)
+    expect(gameboard.areAllSunk()).toBe(false)
+    gameboard.receiveAttack(4,1)
+    expect(gameboard.areAllSunk()).toBe(true)
+});
