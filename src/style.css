@@ -64,7 +64,18 @@ main{
 #instruction{
 	grid-column: 1/-1;
 }
-
+#pass-device{
+	position: absolute;
+	display: none;
+}
+#pass-device>button{
+	border: none;
+	border-radius: 10px;
+	background-color: rgb(200, 99, 99);
+	width: 8rem;
+	font-weight: bold;
+	color: white;
+}
 .container{
 	text-align: center;
 }
@@ -72,6 +83,10 @@ main{
 	border: solid 1px rgb(123, 197, 242);
 	display: grid;
 	grid-template: repeat(10,1fr)/repeat(10,1fr);
+	filter: brightness(95%);
+}
+.board.active{
+	filter: none;
 }
 .cell{
 	width: 50px;
@@ -90,10 +105,10 @@ main{
 .cell.missed{
 	background-color: rgb(104, 197, 255);
 }
-.cell.enemy:hover{
+.board.active .cell:hover{
 	filter: brightness(90%);
 }
-.cell.enemy:active{
+.board.active .cell:active{
 	filter: brightness(110%);
 }
 
