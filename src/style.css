@@ -1,5 +1,6 @@
 /* Reset */
-html,body {
+html,
+body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 	font-family: Arial, Helvetica, sans-serif;
@@ -47,14 +48,14 @@ svg {
 	display: block;
 }
 
-header{
+header {
 	font-weight: bolder;
 	font-size: 3rem;
 	position: absolute;
 	left: 10px;
 }
 
-main{
+main {
 	height: 100%;
 	display: grid;
 	grid-template: 100px 1fr 100px/1fr 1fr;
@@ -62,23 +63,23 @@ main{
 	column-gap: 40px;
 }
 
-#instruction{
+#instruction {
 	grid-column: 1/-1;
 }
-#pass-device{
+#pass-device {
 	position: absolute;
 	display: none;
 }
-button{
+button {
 	box-shadow: 3px 3px 4px rgb(201, 201, 201);
 }
-button:hover{
+button:hover {
 	filter: brightness(95%);
 }
-button:active{
+button:active {
 	box-shadow: none;
 }
-#pass-device>button{
+#pass-device > button {
 	border: none;
 	border-radius: 10px;
 	background-color: rgb(200, 99, 99);
@@ -86,53 +87,53 @@ button:active{
 	font-weight: bold;
 	color: white;
 }
-#ship-container{
+#ship-container {
 	position: absolute;
 	box-shadow: 0px 0px 5px 3px rgb(195, 195, 195);
 }
-#ship-container>.cell{
+#ship-container > .cell {
 	border: solid 1px rgb(177, 88, 88);
 }
-.container{
+.container {
 	text-align: center;
 }
-.board{
+.board {
 	border: solid 1px rgb(123, 197, 242);
 	display: grid;
-	grid-template: repeat(10,1fr)/repeat(10,1fr);
+	grid-template: repeat(10, 1fr) / repeat(10, 1fr);
 	filter: brightness(95%);
 }
-.board.active{
+.board.active {
 	filter: none;
 }
-.cell{
+.cell {
 	width: 40px;
 	aspect-ratio: 1/1;
 	background-color: rgb(157, 218, 255);
 	border: solid 1px rgb(123, 197, 242);
 }
-.cell.ship{
+.cell.ship {
 	background-color: rgb(200, 99, 99);
 	border: none;
 }
-.cell.shot{
+.cell.shot {
 	background-color: rgb(118, 93, 93);
 	border: none;
 }
-.cell.missed{
+.cell.missed {
 	background-color: rgb(104, 197, 255);
 }
-.board.active .cell:hover{
+.board.active .cell:hover {
 	filter: brightness(90%);
 }
-.board.active .cell:active{
+.board.active .cell:active {
 	filter: brightness(110%);
 }
 
-#controls{
+#controls {
 	grid-column: 1/-1;
 }
-#controls>button{
+#controls > button {
 	border: none;
 	border-radius: 10px;
 	background-color: rgb(200, 99, 99);

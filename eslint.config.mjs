@@ -2,19 +2,14 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 
-
 export default [
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
-  eslintConfigPrettier,
-  {
-    "overrides": [
-      {
-        "files": ["tests/**/*"],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
-  }
+	{ languageOptions: { globals: globals.browser } },
+	pluginJs.configs.recommended,
+	eslintConfigPrettier,
+	{
+    files: ["src/**/*.test.js"],
+    rules: {
+      'no-undef':'off',
+    }
+	},  
 ];

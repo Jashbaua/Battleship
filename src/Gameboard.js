@@ -64,7 +64,7 @@ class Gameboard {
 				this.#board[y + i][x] = ship;
 			}
 			return true;
-        }
+		}
 		return false;
 	}
 	receiveAttack(x, y) {
