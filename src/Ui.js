@@ -4,12 +4,12 @@ const b1name = document.querySelector("#board1-name");
 const board2 = document.querySelector("#board2");
 const b2name = document.querySelector("#board2-name");
 const instruction = document.querySelector("#instruction");
-const passDevice=document.querySelector('#pass-device')
+const passDevice = document.querySelector("#pass-device");
+const shipContainer = document.querySelector("#ship-container");
 
 export default function renderUi(player1, player2) {
 	b1name.textContent = player1.name;
 	b2name.textContent = player2.name;
-
 	board1.textContent = "";
 	player1.board.getBoard().forEach((array, row) =>
 		array.forEach((data, col) => {
@@ -41,7 +41,7 @@ function setInstruction(str) {
 	instruction.textContent = str;
 }
 
-function setActiveBoard(board) {
+function toggleActiveBoard(board) {
 	if (board == "board1") {
 		board1.classList.add("active");
 		board2.classList.remove("active");
@@ -52,10 +52,26 @@ function setActiveBoard(board) {
 }
 
 function showPassDevice() {
-	passDevice.style.display='block'
+	passDevice.style.display = "block";
 }
 
 function hidePassDevice() {
-	passDevice.style.display='none'
+	passDevice.style.display = "none";
 }
-export { setInstruction, setActiveBoard,showPassDevice,hidePassDevice };
+function showShip(length) {
+	if (length == 0) shipContainer.style.display = "none";
+	else shipContainer.style.display = "block";
+	shipContainer.textContent = "";
+	for (let i = 0; i < length; i++) {
+		let shipCell = document.createElement("div");
+		shipCell.classList.add("cell", "ship");
+		shipContainer.appendChild(shipCell);
+	}
+}
+export {
+	showShip,
+	setInstruction,
+	toggleActiveBoard,
+	showPassDevice,
+	hidePassDevice,
+};
