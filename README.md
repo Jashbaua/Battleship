@@ -82,11 +82,4 @@ cd Battleship</code></pre>
     <li>After your move, the computer fires back. Its move is shown on your board.</li>
     <li>First player to sink all five of the opponent’s ships wins.</li>
   </ol>
-
-  <h2>Implemented Improvements</h2>
-  <ul>
-    <li>Drag-and-drop placement of ships.</li>
-    <li>Two-player “pass-and-play” mode with a screen that hides the boards when passing the device.</li>
-    <li>Responsive design and improved CSS animations.</li>
-  </ul>
 </body>
